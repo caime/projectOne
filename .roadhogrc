@@ -1,0 +1,18 @@
+{
+  "entry": "src/index.js",
+  "disableCSSModules": false,
+  "autoprefixer": null,
+  "proxy": null,
+  "extraBabelPlugins": [
+    "transform-runtime",
+    ["import", { "libraryName": "antd-mobile", "libraryDirectory": "lib", "style": "css" }]
+  ],
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr",
+         ["import", { "libraryName": "antd-mobile", "libraryDirectory": "lib", "style": "css" }]
+      ]
+    }
+  }
+}
