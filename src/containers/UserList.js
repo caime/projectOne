@@ -12,20 +12,14 @@ const styles = {
     backgroundColor: '#ededed',
     textAlign: 'center'
   },
-    btn:{
-    margin:".4rem .5rem 1.4rem .5rem",
-    background:"#dcb93c",
-    color:'#fff',
-  },
-  link:{
-    display:"line-block",
-    width:"100%",
-    height:"100%"
+  btn:{
+  margin:".4rem .5rem 1.4rem .5rem",
+  background:"#dcb93c",
+  color:'#fff',
   }
 };
 const remove=require("../assets/user_link_remove.png");
 const empower=require("../assets/rlist_empower.png");
-
 
 class UserList extends Component {
   
@@ -43,13 +37,31 @@ class UserList extends Component {
     };
   }
 
+  componentDidMount() {
+    const {dispatch} = this.props;
+     dispatch({
+      type: 'userList/loadData',
+      payload: {}
+    });  
+  }
+
   unbind = (id) =>{alert('删除', '确定删除么???', [
-      { text: '取消', onPress: () => console.log('cancel') },
-      { text: '确定', onPress: () => console.log(id), style: { color: '#846f24' } },
-    ])};
+
+    { text: '取消', onPress: () => console.log('cancel') },
+    { text: '确定', onPress: () => {
+
+      const {dispatch} = this.props;
+      dispatch({
+        type: 'userList/remove',
+        payload: {id:id}
+      });
+
+    }, style: { color: '#846f24' } },
+
+  ])};
 
   render() {
-    const {users}=this.props;
+    const {users}=this.props.userList;
     return (
       <div>
       <List >
@@ -79,15 +91,11 @@ UserList.propTypes = {
 };
 UserList.defaultProps = {
   onClick: () => {},
-  users:[
-    {id:1,phone:"123898333"},
-    {id:2,phone:"124598333"},
-    {id:3,phone:"123398333"},
-  ]
+  users:[]
 };
 function mapStateToProps(state) {
   return {
-    recordList: state.recordList
+    userList: state.userList
   };
 }
 export default connect(mapStateToProps)(UserList);

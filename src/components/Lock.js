@@ -37,15 +37,9 @@ class Lock extends Component {
     }
 
     // const data = [1,2,3];
-
     return (
       <div style={styles.container} onClick={onClick}>
         <img style={styles.img} src={img}/>
-        {/*{
-          data.map((item, index) => {
-            return <span>{item}</span>
-          })
-        }*/}
       </div>
     );
   }

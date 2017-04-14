@@ -20,19 +20,17 @@ const remove=require("../assets/rlist_empower_remove.png");
 
 class RecordList extends Component {
   
-   onClick = () => {
-     const {dispatch}=this.props;
-      dispatch({
-        type: 'recordList/test',
-        payload: {lockState: 2}
-      });
-    }
-
+  componentDidMount() {
+     const {dispatch} = this.props;
+     dispatch({
+      type: 'recordList/loadData',
+      payload: {}
+    });
+  }
   render() {
     const {recordList}=this.props;
     return (
       <List style={{marginBottom:"200px"}}>
-        <div onClick={this.onClick}>ggggg</div>
          {
             recordList.records.map((item,index)=>{
                 var img=lockOpen;

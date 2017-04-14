@@ -27,13 +27,27 @@ const styles = {
 };
 
 class Landlord extends Component {
+  constructor(props){
+    super(props)
+    this.state={
+      user:{
+        phone:"18826253456",
+        name:"cai"
+      }
+    }
+  }
+
+  componentDidMount() {
+    //请求数据  
+  }
+
   render() {
     return(
       <div style={styles.container}>
          <img src={userIcon} alt="" style={styles.iconIma}/>
           <div style={styles.user}>
             <img src={phone} alt="" style={{verticalAlign: "middle"}}/>
-            <span style={styles.text}>188999999</span>
+            <span style={styles.text}>{this.state.user.phone}</span>
           </div>
       </div>
     )
@@ -46,7 +60,7 @@ Landlord.defaultProps = {
 };
 function mapStateToProps(state) {
   return {
-    recordData: state.recordData
+    
   };
 }
 export default connect(mapStateToProps)(Landlord);

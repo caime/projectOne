@@ -3,8 +3,6 @@ import { connect } from 'dva';
 import { List, InputItem, WhiteSpace, Button } from 'antd-mobile/lib';
 import Landlord from "../containers/Landlord";
 import UserList from "../containers/UserList";
-import { createForm } from 'rc-form';
-
 
 const styles = {
   container: {
@@ -18,15 +16,11 @@ const styles = {
   }
 };
 
-const img = require('../assets/logo.png');
 const phoneIcon=require('../assets/phone.png');
 const pwIcon=require('../assets/password.png');
 
 class UserListPage extends Component {
   render() {
-
-    const { getFieldProps } = this.props.form;
-
     return (
       <div style={styles.container}>
         <Landlord/>
@@ -39,6 +33,4 @@ class UserListPage extends Component {
 UserListPage.propTypes = {
 };
 
-const LoginPageForm = createForm()(UserListPage);
-
-export default connect()(LoginPageForm);
+export default connect()(UserListPage);

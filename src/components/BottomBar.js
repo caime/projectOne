@@ -2,7 +2,6 @@ import React, {Component, PropTypes, } from 'react';
 import { Router, Route } from 'dva/router';
 import { TabBar, Icon, Flex} from 'antd-mobile/lib';
 
-const lock1 = require('../assets/lock_close.png');
 const icon1=require('../assets/tab_control.png');
 const icon2=require('../assets/tab_record.png');
 const icon3=require('../assets/tab_user.png');
@@ -22,10 +21,9 @@ class BottomBar extends Component {
   constructor(props) {
     super(props);
      this.state = {
-      selectedTab: 'redTab',
-      hidden: false,
     };
   }
+  //切换选项卡
   tab(index){
    if(index==1){
      location.href="/#/nav/deviceCtrl"
@@ -35,9 +33,8 @@ class BottomBar extends Component {
     location.href="/#/nav/userList"
    }
   }
+
   render() {
-    
-    // const data = [1,2,3];
     
     return (
          <Flex style={styles.bar}>
@@ -46,7 +43,7 @@ class BottomBar extends Component {
               <img src={icon1} alt=""/><br/>
               <span>控制</span>
             </div>
-          </Flex.Item >
+          </Flex.Item>
           <Flex.Item  key='2' onClick={() => {this.props.tab(2)}}>
             <div style={styles.item}>
               <img src={icon2} alt=""/><br/>

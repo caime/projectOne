@@ -65,6 +65,10 @@ class AddUserPage extends Component {
         et,
         });
     }
+    add(){
+      const { getFieldProps } = this.props.form;
+      console.log(getFieldProps.getFieldsValue)
+    }
   render() {
     const { getFieldProps } = this.props.form;
     return (
@@ -96,7 +100,7 @@ class AddUserPage extends Component {
                 <List.Item thumb={timeIcon}>离开</List.Item>
             </DatePicker>
           </List>
-          <Button style={styles.btn} className="btn" onClick={()=>location.href='/#/success'}>确定</Button>
+          <Button style={styles.btn} className="btn" /*onClick={()=>location.href='/#/success'}*/ onClick={()=>{this.add()}}>确定</Button>
         </div>
       </div>
     );

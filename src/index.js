@@ -15,6 +15,7 @@ app.model(require('./models/produtList'));
 app.model(require('./models/deviceData'));
 app.model(require('./models/deviceList'));
 app.model(require('./models/recordList'));
+app.model(require('./models/userList'));
 
 // 4. Router
 app.router(require('./router'));
