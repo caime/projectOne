@@ -34,15 +34,23 @@ export default {
       const data=state.data.filter(item=>item.id!==id);
       return {...state,data}
     },
-     //unbind device
+    //rename device
     rename(state, action) {
       let data=state.data;
       let id=action.payload.id;
-      let _old=data[id];
-      _old.name=action.payload.value;
-
-      data.splice(id,1,_old);
-
+      let item=null;
+      // let _old=data[id];
+      // _old.name=action.payload.value;
+      let i=0;
+      item=state.data.filter((item,index)=>{
+        if(item.id==id){
+          i=index;
+        }
+        return item.id!==id
+      });
+      console.log(i+" ggg");
+      // data.splice(id,1,_old);
+      data[i].name=action.payload.value;
       return {...state,data}
     },
   },
