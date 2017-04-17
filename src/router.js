@@ -13,13 +13,26 @@ import UserListPage from './routes/UserListPage';
 import AddUserPage from './routes/AddUserPage';
 import SuccessPage from './routes/SuccessPage';
 
+function setTitle (t) {
+  document.title = t;
+  var i = document.createElement('iframe');
+  i.src = '//m.baidu.com/favicon.ico';
+  i.style.display = 'none';
+  i.onload = function() {
+    setTimeout(function(){
+      i.remove();
+    }, 9);
+  };
+  document.body.appendChild(i);
+}
+
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
       <Route path="/" component={App}>
-        <Route path="login" component={LoginPage}/>
-        <Route path="regist" component={RegistPage}/>
-        <Route path="forget" component={ForgetPage}/>
+        <Route path="login" component={LoginPage} onEnter={()=>setTitle("HOMEY")}/>
+        <Route path="regist" component={RegistPage} onEnter={()=>setTitle("注册")}/>
+        <Route path="forget" component={ForgetPage} onEnter={()=>setTitle("忘记密码")}/>
         <Route path="changePw" component={ChangePwPage}/>
         <Route path="addUser" component={AddUserPage}/> 
         <Route path="deviceList" component={DeviceListPage}/>

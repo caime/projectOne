@@ -43,10 +43,19 @@ const phoneIcon=require('../assets/phone.png');
 const pwIcon=require('../assets/password.png');
 
 class LoginPage extends Component {
-  render() {
-
+  submit(){
     const { getFieldProps } = this.props.form;
-
+    let phone=getFieldProps("phone").value;
+    
+   
+    if(phone!=null&&phone!=""){
+       phone=phone.replace(/\s/g ,"");
+    console.log(phone);
+      location.href="/#/deviceList"
+    }
+  }
+  render() {
+    const { getFieldProps } = this.props.form;
     return (
       <div style={styles.container}>
         <div style={styles.content}>
@@ -70,7 +79,7 @@ class LoginPage extends Component {
            </InputItem>
            
           </List>
-          <Button style={styles.btn} className="btn" onClick={()=>location.href='/#/deviceList'}>登录</Button>
+          <Button style={styles.btn} className="btn" onClick={this.submit.bind(this)}>登录</Button>
         </div>
         <div style={styles.footer}>
           <a href="/#/regist" style={styles.footer.a}>新用户注册</a>
