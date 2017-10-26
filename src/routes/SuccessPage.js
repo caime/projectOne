@@ -41,6 +41,11 @@ class SuccessPage extends Component {
     console.log("update four")
     console.log("update five")
   }
+  componentWillMount() {
+    for(let i=0;i<9;++){
+      console.log('i am here')
+    }
+  }
   render() {
     return (
       <div style={styles.container}>

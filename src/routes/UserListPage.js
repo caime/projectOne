@@ -20,6 +20,11 @@ const phoneIcon=require('../assets/phone.png');
 const pwIcon=require('../assets/password.png');
 
 class UserListPage extends Component {
+  componentWillMount() {
+    for(let i=0;i<9;++){
+      console.log('i am here also')
+    }
+  }
   render() {
     return (
       <div style={styles.container}>
