@@ -41,8 +41,7 @@ class SuccessPage extends Component {
   }
   componentWillUpdate() {
     console.log("update one")
-    console.log("update two")
-    console.log("update three")
+
     console.log("update four")
     console.log("update five")
 
@@ -53,6 +52,7 @@ class SuccessPage extends Component {
   }
   componentWillMount() {
     for(let i=0;i<9;++){
+      console.log('i am here')
       console.log('i am here')
     }
   }
