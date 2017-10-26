@@ -38,13 +38,17 @@ class SuccessPage extends Component {
   componentWillUnmount() {
     console.log('update six')
     console.log('update nine')
-
+  }
   componentWillUpdate() {
     console.log("update one")
     console.log("update two")
     console.log("update three")
     console.log("update four")
     console.log("update five")
+
+    for(let i=0;i<8;i++){
+      console.log('i add something here!')
+    }
 
   }
   render() {

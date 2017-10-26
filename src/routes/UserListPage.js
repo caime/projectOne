@@ -20,6 +20,9 @@ const phoneIcon=require('../assets/phone.png');
 const pwIcon=require('../assets/password.png');
 
 class UserListPage extends Component {
+  componentDidMount() {
+    console.log('i also add something herer')
+  }
   render() {
     return (
       <div style={styles.container}>
