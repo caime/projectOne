@@ -34,7 +34,10 @@ class SuccessPage extends Component {
         location.href="/#/nav/3"
       },1500)
   }
-
+  componentWillUnmount() {
+    console.log('update six')
+    console.log('update nine')
+  }
   render() {
     return (
       <div style={styles.container}>
