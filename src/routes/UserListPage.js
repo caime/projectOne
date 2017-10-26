@@ -24,14 +24,17 @@ class UserListPage extends Component {
   componentWillMount() {
     for(let i=0;i<9;++){
       console.log('i am here also')
+
       console.log('i am here also')
       console.log('i am here also')
     }
 
   componentDidMount() {
     console.log('i also add something herer')
+
     console.log('i also add something one')
     console.log('i also add something two')
+
 
   }
   render() {
